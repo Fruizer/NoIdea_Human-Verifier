@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noldea - Human Writing Verifier</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-area">
+            <h2>Noldea - Human Writing Verifier</h2>
+        </div>
+        <button id="themeToggle" class="btn-primary">🌙 Dark Mode</button>
+    </header>
+
+    <div class="workspace">
+        
+        <main class="editor-section card">
+            <div class="editor-header">
+                <h3>Document Name</h3>
+                <div class="toolbar">
+                    <select id="headerSelect">
+                        <option value="P">Normal text</option>
+                        <option value="H1">Heading 1</option>
+                        <option value="H2">Heading 2</option>
+                        <option value="H3">Heading 3</option>
+                    </select>
+                    <select id="fontSelect">
+                        <option value="Arial">Arial</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value="Courier New">Courier</option>
+                    </select>
+                    <button id="boldBtn"><b>B</b></button>
+                    <button id="italicBtn"><i>I</i></button>
+                    <select id="sizeSelect">
+                        <option value="1">Tiny</option>
+                        <option value="3">Normal</option>
+                        <option value="5">Large</option>
+                        <option value="7">Huge</option>
+                    </select>
+                    <button id="alignLeftBtn">⬅️</button>
+                    <button id="alignCenterBtn">⬌</button>
+                    <button id="alignRightBtn">➡️</button>
+                </div>
+            </div>
+            
+            <div id="mainEditor" contenteditable="true">
+                <h1>Example Heading</h1>
+                <p>Welcome to your Noldea workspace. Start typing here...</p>
+                <br><br><br><br><br><br>
+                <h2>Methodology</h2>
+                <p>Scroll down here to test the dynamic checkpoints!</p>
+                <br><br><br><br><br><br>
+                <h2>Evaluation</h2>
+                <p>More text goes here...</p>
+                <br><br><br><br><br><br>
+            </div>
+        </main>
+
+        <aside class="sidebar">
+            <div class="card sidebar-card">
+                <h3>Document Tab</h3>
+                <div id="documentTabsList" class="btn-list">
+                    </div>
+            </div>
+
+            <div class="card sidebar-card">
+                <h3>Draft History</h3>
+                <div id="draftHistoryList" class="btn-list"></div>
+            </div>
+
+            <div class="card sidebar-card">
+                <h3>Notes</h3>
+                <textarea class="notes-area" placeholder="Jot down notes here..."></textarea>
+            </div>
+        </aside>
+    </div>
+
+    <div class="action-row">
+        <button id="saveDraftBtn" class="btn-primary btn-large">Save Draft</button>
+        <button id="generateReportBtn" class="btn-primary btn-large">Generate Report</button>
+        <button id="exportPdfBtn" class="btn-primary btn-large">Export as PDF</button>
+        <button id="exportReportBtn" class="btn-primary btn-large">Export Report</button>
+    </div>
+
+    <div class="report-workspace">
+        <div class="card report-card">
+            <h2>Noldea - Authorship Report</h2>
+            <div class="report-content">
+                <div id="confidenceScore" class="confidence-score">Confidence Score: 0%</div>
+                <p><b>Writing Metrics:</b></p>
+                <p>Typing Speed: <span id="wpmDisplay">0</span> WPM</p>
+                <p>Word Count: <span id="wordCount">0</span></p>
+                <p>Character Count (no spaces): <span id="charCount">0</span></p>
+                <p>Pauses Detected: <span id="pauseDisplay">0 (0.0s thinking time)</span></p>
+                <p>Insertions: <span id="insertCount">0</span>, Deletions: <span id="deleteCount">0</span></p>
+                <p>Paste Events: <span id="pasteCount">0</span></p>
+            </div>
+        </div>
+        
+        <div class="card suggestions-card">
+            <h3>Suggestions</h3>
+            <ul id="suggestionsList">
+                <li>Start typing to scan for writing patterns.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
